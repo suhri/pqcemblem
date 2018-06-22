@@ -221,25 +221,6 @@ int Sample_CDT_NOSEED()
 
 }
 
-void Sample_CDT_32(int *x1, int *x2)
-{
-	int sign, sample, r;
-
-	_rdrand32_step(&r);
-	sign = r & 1;
-	sample = CDT_TABLE[((r>>1)&0x1ff)];
-
-	*x1 = ((-sign) ^ sample) + sign;
-
-	r = r>>10;
-	sign = r & 1;
-	sample = CDT_TABLE[((r>>1)&0x1ff)];
-
-	*x2 = ((-sign) ^ sample) + sign;
-
-
-}
-
 int Sample_CDT(int seed)
 {
 	int r, sign, sample;
