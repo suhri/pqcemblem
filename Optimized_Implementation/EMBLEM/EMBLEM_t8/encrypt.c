@@ -235,12 +235,6 @@ int inline CRYPTO_KeyGen(CRYPTO_public_t pPubKey, int *pPriKey)
 	int ret = 0;
 	int cnt = 0;
 
-	if (pPubKey == NULL || pPriKey == NULL)
-	{
-		ret = CRYPTO_ERR_KEYGEN_OUTPUT_NOT_INITIALIZED;
-		goto err;
-	}
-
 	START_WATCH;
 	/* Public Key A Generation */
 	for (i = 0; i < CRYPTO_m*CRYPTO_n; i++)
@@ -276,7 +270,6 @@ int inline CRYPTO_KeyGen(CRYPTO_public_t pPubKey, int *pPriKey)
 
 	STOP_WATCH;
 	time_keygen += sec;
-err:
 
 	return ret;
 }
