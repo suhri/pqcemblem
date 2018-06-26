@@ -221,22 +221,6 @@ int Sample_CDT_NOSEED()
 
 }
 
-int Sample_CDT(int seed)
-{
-	int r, sign, sample;
-	int i;
-
-	if (seed != 0)
-		srand(seed);
-
-	sign = rand() & 1;
-	sample = CDT_TABLE[(rand()&0x1ff)];
-
-	sample = ((-sign) ^ sample) + sign;
-	return sample;
-
-}
-
 void Sample_CDT_hash(int *x, int seed, int i)
 {
 	unsigned char tmp[64]={0,};
@@ -252,8 +236,8 @@ void Sample_CDT_hash(int *x, int seed, int i)
 	for(j=0; j<32; j++)
 	{
 		sign = tmp[j<<1]&1;
-		sample = (tmp[(j<<1)+1]&0x10)<<7;
-		sample ^= tmp[j+1];
+		sample = ((tmp[(j<<1)]>>1)&1)<<8;
+		sample ^= tmp[(j<<1)+1];
 
 		p[j] = CDT_TABLE[sample&0xff];
 		p[j] = ((-sign)^p[j])+sign;
