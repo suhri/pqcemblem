@@ -331,23 +331,4 @@ typedef struct
 
 typedef _CRYPTO_public_struct CRYPTO_public_t[1];
 
-enum CRYPTO_ERR_KEYGEN {
 
-	/* Error codes for block cipher en/decryption */
-	CRYPTO_ERR_KEYGEN_ALLOCATION_FAILED = 1000,
-	CRYPTO_ERR_KEYGEN_FAILED,
-	CRYPTO_ERR_KEYGEN_OUTPUT_NOT_INITIALIZED,
-
-};
-
-enum CRYPTO_ERR_ENC {
-
-	/* Error codes for block cipher en/decryption */
-	CRYPTO_ERR_ENC_ALLOCATION_FAILED = 2000,
-	CRYPTO_ERR_ENC_NOT_INITIALIZED,
-	CRYPTO_ERR_ENC_MSGLEN_ERROR,
-	CRYPTO_ERR_ENC_PARAMETER,
-	CRYPTO_ERR_ENC_MISSING_MSG,
-
-
-};
