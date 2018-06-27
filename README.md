@@ -35,6 +35,7 @@ OpenSSL must be installed before building EMBLEM and R.EMBLEM
 
 - Define parameters by typing '#define xxx' on param.h as given in below ('Parameter Sets')
 - Type 
+
   ```sh
   $ make
   ```
