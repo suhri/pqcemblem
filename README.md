@@ -11,10 +11,10 @@ EMBLEM and R.EMBLEM is a post-quantum cryptographic algorithm based on (Ring) Le
 * [`KAT`](KAT/): Known Answer Test (KAT) files for the KEM.
 * [`Optimized_Implementation`](Optimized_Implementation/): Optimized implementation of the EMBLEM and R.EMBLEM
 * [`Reference_Implementation`](Reference_Implementation/): Reference implementation of the EMBLEM and R.EMBLEM
-* `EMBLEM_t4`: Source code for EMBLEM when the message is divided into 4 bits
-* `EMBLEM_t8`: Source code for EMBLEM when the message is divided into 8 bits
-* `R_EMBLEM_t1`: Source code for R.EMBLEM when the message is divided into 1 bit
-* `R_EMBLEM_t2`: Source code for R.EMBLEM when the message is divided into 2 bits
+* `EMBLEM_t4`: Source code for the EMBLEM when the message is split into 4 bits
+* `EMBLEM_t8`: Source code for the EMBLEM when the message is split into 8 bits
+* `R_EMBLEM_t1`: Source code for the R.EMBLEM when the message is split into 1 bit
+* `R_EMBLEM_t2`: Source code for the R.EMBLEM when the message is split into 2 bits
 
 
 ## Main Features
