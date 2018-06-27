@@ -45,7 +45,7 @@ Both EMBLEM and R.EMBLEm paremeters can be configured by editing 'params.h'.
 Below are parameter sets used in each folder.
 
 * EMBLEM_t4 (m, n, k, v)
-  `#define ONE`: (1,008, 824, 2, 32)
+  `#define ONE`: (1,008, 824, 2, 32)\\
   `#define TWO`: (1,008, 824, 4, 16)
   `#define THREE`: (1,008, 824, 8, 8)
   `#define FOUR`: (1,008, 824, 16, 4)
