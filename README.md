@@ -13,7 +13,7 @@ EMBLEM and R.EMBLEM is a post-quantum cryptographic algorithm based on (Ring) Le
 * [`Reference_Implementation`](Reference_Implementation/): Reference implementation of the EMBLEM and R.EMBLEM
 * `EMBLEM_t4`: Source code for EMBLEM when the message is divided into 4 bits
 * `EMBLEM_t8`: Source code for EMBLEM when the message is divided into 8 bits
-* `R_EMBLEM_t1`: Source code for R.EMBLEM when the message is divided into 1 bits
+* `R_EMBLEM_t1`: Source code for R.EMBLEM when the message is divided into 1 bit
 * `R_EMBLEM_t2`: Source code for R.EMBLEM when the message is divided into 2 bits
 
 
