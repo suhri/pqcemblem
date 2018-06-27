@@ -6,7 +6,6 @@
 
 EMBLEM and R.EMBLEM is a post-quantum cryptographic libary based on (Ring) Learning with Errors ((R)LWE) problem written in C
 
-The library was developed by [Microsoft Research](http://research.microsoft.com/) for experimentation purposes.
 
 ## Contents
 
