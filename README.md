@@ -44,43 +44,43 @@ OpenSSL must be installed before building EMBLEM and R.EMBLEM
 Both EMBLEM and R.EMBLEm paremeters can be configured by editing 'params.h'.
 Below are parameter sets used in each folder.
 
-* EMBLEM_t4 (m, n, k, v)
-  -`#define ONE`: (1,008, 824, 2, 32)
-  -`#define TWO`: (1,008, 824, 4, 16)
-  -`#define THREE`: (1,008, 824, 8, 8)
-  -`#define FOUR`: (1,008, 824, 16, 4)
-  -`#define FIVE`: (1,008, 824, 32, 2)
-  -`#define SIX`: (1,008, 824, 64, 1)
+* EMBLEM_t4 (m, n, k, v)__
+  `#define ONE`: (1,008, 824, 2, 32)__
+  `#define TWO`: (1,008, 824, 4, 16)__
+  `#define THREE`: (1,008, 824, 8, 8)__
+  `#define FOUR`: (1,008, 824, 16, 4)__
+  `#define FIVE`: (1,008, 824, 32, 2)__
+  `#define SIX`: (1,008, 824, 64, 1)__
 
-  -`#define ONE_TWO`: (1,016, 784, 2, 32)
-  -`#define TWO_TWO`: (1,016, 784, 4, 16)
-  -`#define THREE_TWO`: (1,016, 784, 8, 8)
-  -`#define FOUR_TWO`: (1,016, 784, 16, 4)
-  -`#define FIVE_TWO`: (1,016, 784, 32, 2)
-  -`#define SIX_TWO`: (1,016, 784, 64, 1)
+  `#define ONE_TWO`: (1,016, 784, 2, 32)__
+  `#define TWO_TWO`: (1,016, 784, 4, 16)__
+  `#define THREE_TWO`: (1,016, 784, 8, 8)__
+  `#define FOUR_TWO`: (1,016, 784, 16, 4)__
+  `#define FIVE_TWO`: (1,016, 784, 32, 2)__
+  `#define SIX_TWO`: (1,016, 784, 64, 1)__
   
-* EMBLEM_t8 (m, n, k, v)
-  -`#define ONE`: (1,184, 1,024, 1, 32)
-  -`#define TWO`: (1,184, 1,024, 2, 16)
-  -`#define THREE`: (1,184, 1,024, 4, 8)
-  -`#define FOUR`: (1,184, 1,024, 8, 4)
-  -`#define FIVE`: (1,184, 1,024, 16, 2)
-  -`#define SIX`: (1,184, 1,024, 32, 1)
+* EMBLEM_t8 (m, n, k, v)__
+  `#define ONE`: (1,184, 1,024, 1, 32)__
+  `#define TWO`: (1,184, 1,024, 2, 16)__
+  `#define THREE`: (1,184, 1,024, 4, 8)__
+  `#define FOUR`: (1,184, 1,024, 8, 4)__
+  `#define FIVE`: (1,184, 1,024, 16, 2)__
+  `#define SIX`: (1,184, 1,024, 32, 1)__
 
-  -`#define ONE_TWO`: (1,144, 984, 1, 32)
-  -`#define TWO_TWO`: (1,144, 984, 2, 16)
-  -`#define THREE_TWO`: (1,144, 984, 4, 8)
-  -`#define FOUR_TWO`: (1,144, 984, 8, 4)
-  -`#define FIVE_TWO`: (1,144, 984, 16, 2)
-  -`#define SIX_TWO`: (1,144, 984, 32, 1)
+  `#define ONE_TWO`: (1,144, 984, 1, 32)__
+  `#define TWO_TWO`: (1,144, 984, 2, 16)__
+  `#define THREE_TWO`: (1,144, 984, 4, 8)__
+  `#define FOUR_TWO`: (1,144, 984, 8, 4)__
+  `#define FIVE_TWO`: (1,144, 984, 16, 2)__
+  `#define SIX_TWO`: (1,144, 984, 32, 1)__
 
-* R.EMBLEM_t1 (n, q, t)
-  -`#define R_14_1`: (1,024, 12289, 1)
-  -`#define R_14_2`: (1,024, 12289, 1)
+* R.EMBLEM_t1 (n, q, t)__
+  `#define R_14_1`: (1,024, 12289, 1)__
+  `#define R_14_2`: (1,024, 12289, 1)__
 
-* R.EMBLEM_t2 (n, q, t)
-  -`#define R_16_1`: (1,024, 40961, 2)
-  -`#define R_16_2`: (1,024, 40961, 2)
+* R.EMBLEM_t2 (n, q, t)__
+  `#define R_16_1`: (1,024, 40961, 2)__
+  `#define R_16_2`: (1,024, 40961, 2)__
 
 
 
