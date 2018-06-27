@@ -3,7 +3,7 @@
 
 
 
-EMBLEM and R.EMBLEM is a post-quantum cryptographic libary based on (Ring) Learning with Errors ((R)LWE) problem written in C
+EMBLEM and R.EMBLEM is a post-quantum cryptographic algorithm based on (Ring) Learning with Errors ((R)LWE) problem written in C
 
 
 ## Contents
