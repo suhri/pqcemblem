@@ -254,7 +254,7 @@ int inline CRYPTO_KeyGen(CRYPTO_public_t pPubKey, int *pPriKey)
 	int ret = 0;
 	int cnt = 0;
 
-	START_WATCH;
+
 	/* Public Key A Generation */
 	for (i = 0; i < CRYPTO_m*CRYPTO_n; i++)
 		pPubKey->A[i] = (rand() & 0xff) | ((rand() & 0xff) << 8);
@@ -287,8 +287,6 @@ int inline CRYPTO_KeyGen(CRYPTO_public_t pPubKey, int *pPriKey)
 		}
 	}
 
-	STOP_WATCH;
-	time_keygen += sec;
 
 	return ret;
 }
@@ -447,8 +445,6 @@ int CRYPTO_KEM_Encap(unsigned int *Key, int *pCipher, CRYPTO_public_t pPubKey)
 	r = (int*)calloc(CRYPTO_m*CRYPTO_v, sizeof(int*));
 	KeyIn = (unsigned int*)calloc(KLen, sizeof(unsigned int*));
 
-START_WATCH;
-
 	/* STEP 1 : Select random 256 bit sizeof v*k */
 	for (i = 0; i < 8; i++)
 	{
@@ -474,8 +470,6 @@ START_WATCH;
 
 	SHA256_INT(KeyIn, KLen << 2, Key);
 
-STOP_WATCH;
-time_enc+=sec;
 	free(r);
 	free(KeyIn);
 
@@ -502,7 +496,6 @@ int CRYPTO_KEM_Decap(unsigned int *Key, int *pCipher, CRYPTO_public_t pPubKey, i
 	C_1 = (int*)calloc(CRYPTO_v*(CRYPTO_n + CRYPTO_k), sizeof(int*));
 	KeyIn = (unsigned int*)calloc(KLen, sizeof(unsigned int*));
 
-START_WATCH;
 
 	/* STEP 1 : Compute delta */
 	_KEM_Dec(delta, pPriKey, pCipher);
@@ -536,8 +529,7 @@ START_WATCH;
 
 	SHA256_INT(KeyIn, KLen << 2, Key);
 
-STOP_WATCH;
-time_dec+=sec;
+
 err:
 	memset(delta, 0, CRYPTO_delta);
 
@@ -567,22 +559,28 @@ void CRYPTO_TEST_CCA(int iter)
 time_keygen=0;
 	for (i = 0; i < iter; i++)
 	{
+		START_WATCH;
 		CRYPTO_KeyGen(pPubKey, pPriKey);
-		CRYPTO_KEM_Encap(Key, pCipher, pPubKey);
-		CRYPTO_KEM_Decap(KeyPrime, pCipher, pPubKey, pPriKey);
-		if (memcmp(Key, KeyPrime, 8 * sizeof(int)) != 0)
-		{
-
-			//printf("FAILED \n");
-		}
-
-		memset(pPubKey->A, 0, CRYPTO_m*CRYPTO_n * sizeof(int));
-		memset(pPubKey->B, 0, CRYPTO_m*CRYPTO_k * sizeof(int));
-		memset(pCipher, 0, (CRYPTO_v*(CRYPTO_n + CRYPTO_k) + 8) * sizeof(int));
-		memset(Key, 0, 8 * sizeof(int));
-		memset(KeyPrime, 0, 8 * sizeof(int));
-	//	printf("Round : %d \n", i);
+		STOP_WATCH;
+		time_keygen+=sec;
 	}
+	
+	for (i = 0; i < iter; i++)
+	{
+		START_WATCH;
+		CRYPTO_KEM_Encap(Key, pCipher, pPubKey);
+		STOP_WATCH;
+		time_keygen+=sec;
+	}
+	
+	for (i = 0; i < iter; i++)
+	{
+		START_WATCH;
+		CRYPTO_KEM_Decap(KeyPrime, pCipher, pPubKey, pPriKey);
+		STOP_WATCH;
+		time_keygen+=sec;
+	}
+	
 
 	printf("\t Keygen Time  : %.5f ms \n", ((time_keygen / iter) * 1000));
 	printf("\t Encap Time  : %.5f ms \n", ((time_enc / iter) * 1000));
